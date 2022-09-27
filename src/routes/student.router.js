@@ -7,4 +7,5 @@ StudentRouter.get('/:sId', controller.getById);
 StudentRouter.post('/', controller.addStudent);
 StudentRouter.patch('/', controller.update);
 StudentRouter.delete('/', controller.delete);
+StudentRouter.post("/auth", controller.login);
 module.exports = StudentRouter;

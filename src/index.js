@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const PORT = process.env.PORT || 8000
+const port = require('./constants/index')
 
 const StudentRouter = require('./routes/student.router');
 const CourseRoute = require('./routes/course.router');
@@ -15,10 +15,10 @@ app.use('/student', StudentRouter);
 app.use('/course', CourseRoute);
 app.use('/staff', StaffRoute);
 
-app.get('/', (req, res)=>{
+app.get('/', (req, res) => {
     res.json("This is server side");
 });
 
-app.listen(PORT, ()=>{
-    console.log("LisWtenin at", PORT);
+app.listen(port.PORT, () => {
+    console.log("Listening at", port.PORT);
 })

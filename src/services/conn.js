@@ -1,14 +1,9 @@
 const mysql = require('mysql');
+const constants = require('../constants/index');
+const connection = mysql.createConnection(constants.db);
 
-const connection = mysql.createConnection({
-    host : "localhost",
-    user : "root",
-    password : "Root@03",
-    database : "institute_management"
-});
-
-connection.connect((err)=>{
-    if(err) throw err;
+connection.connect((err) => {
+    if (err) throw err;
     console.log("Database connected!");
 })
 
